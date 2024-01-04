@@ -1,0 +1,67 @@
+### <img/> TAG
+import logoImg  from '@/assets/logo.png';
+src = {logoImg.src}, Nextjs assumed that imported image object has src attribute 
+          which basically has reference  of the image/logo
+<img src={logoImg.src} alt='A plate with food on it'/>
+
+##Nextjs has build-in optimized, lazy loading and quite responsive Image tag.
+here src = {logoImg.src} is not required. priority tag image shouold be in the page.
+<Image src={logoImg} alt='A plate with food on it' priority/>
+
+### Image slide show - Images are showing after every 5 seconds.
+    done with the help of useEffect and setInterval()
+
+### Sqlite DB
+npm install better-sqlite3
+
+node initdb.js
+
+### key and list returning with map function
+I was not including return of the <li> element and it was not showing anything on the screen
+return (
+      <ul className={classes.meals}>
+         {
+          meals.map((meal) => {
+            return (
+               <li key={meal.id}>
+                 <MealItem {...meal}/>
+               </li>
+             )
+          })
+         }
+      </ul>
+    )
+
+### Nextjs has it's own loading component. But we have placed that loading with react's Suspense component.
+    I have placed loading-out.js inside app/meals folder just for learning understaning.
+    loading has been used with Suspense fallback inside app/meals/page.js page.
+    We have placed only the content that is coming from database into Suspense fallback not entire
+    MealsPage.
+
+  ## error page
+  ## not-found page
+### notFound
+ It stop the current component execution and display the closest(by file/folder path) error or not-foun
+ component
+
+ ### Input Image Picker
+
+
+
+### GITHUB
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/GulamJilani5/nextjs-foodies-project.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/GulamJilani5/nextjs-foodies-project.git
+git branch -M main
+git push -u origin main
+      
+
+
+
+

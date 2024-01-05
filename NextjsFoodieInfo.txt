@@ -38,15 +38,17 @@ return (
     We have placed only the content that is coming from database into Suspense fallback not entire
     MealsPage.
 
+  ## loading page
   ## error page
   ## not-found page
 ### notFound
  It stop the current component execution and display the closest(by file/folder path) error or not-foun
  component
 
- ### Input Image Picker
-
-
+ ### Input Image Picker(file uplaoding conecpt)
+ ### Server action for submitting form
+     server action should be inside server component, can not be inside client component.
+     
 
 ### GITHUB
 git init
@@ -60,6 +62,35 @@ git push -u origin main
 git remote add origin https://github.com/GulamJilani5/nextjs-foodies-project.git
 git branch -M main
 git push -u origin main
+
+### Sanitizing user input from xss protection
+npm install slugify xss
+
+
+### Getting error while submitting share meal from the input form.
+
+ SqliteError: NOT NULL constraint failed: meals.creator
+    at saveMeal (./lib/meals.js:56:9)
+    at async shareMeal (./lib/actions.js:26:5)
+  52 |         @slug
+  53 |     )`
+> 54 |     ).run(meal);
+     |      ^
+  55 | }
+
+
+### const[state, formAction] = useFormState(fn, initial-state)
+
+fn - actual server action that will be trigger when form is submitted.
+intial-state - intial value return by 'useFormState' before being triggering the 'fn' function
+
+state - intial value is initial state or value return by 'fn' function.
+formAction - this is pass to action={formAction} in forms
+
+
+### Nextjs Caching in production and revalidation
+revalidatePath() - throw away the cache associated with mentioned page or path.
+
       
 
 

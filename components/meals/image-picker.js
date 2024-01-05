@@ -35,7 +35,7 @@ export default function ImagePicker({label, name}) {
             <div className={classes.preview}>
                 {!pickedImage && <p>No image picked yet.</p>}
                 {
-                    <Image src={pickedImage} alt='The selected iamge by the user.' fill/>
+                    <Image src={pickedImage} alt='The selected image by the user.' fill/>
                 }
             </div>
             <input id={name} name={name} type='file' accept='image/jpg, image/png' className={classes.input} ref={imageInput} onChange={handleImagechange} required/>
